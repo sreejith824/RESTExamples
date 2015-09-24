@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+	<display-name>StudentApp</display-name>
+	<module id="Module_1427724588969">
+		<ejb>StudentEJB.jar</ejb>
+	</module>
+	<module id="Module_1427724588970">
+		<web>
+			<web-uri>StudentWeb.war</web-uri>
+			<context-root>StudentWeb</context-root>
+		</web>
+	</module>
+	<security-role>
+		<role-name>RegisteredUsers</role-name>
+	</security-role>
+</application>

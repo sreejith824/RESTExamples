@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="LoginManagerApp">
+        <wb-resource deploy-path="/" source-path="/" tag="defaultRootSource"/>
+        <dependent-module archiveName="LoginManagerEJB.jar" deploy-path="/" handle="module:/resource/LoginManagerEJB/LoginManagerEJB">
+            <dependent-object>Module_1434206584006</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginManagerEJBClient.jar" deploy-path="/" handle="module:/resource/LoginManagerEJBClient/LoginManagerEJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginManagerWeb.war" deploy-path="/" handle="module:/resource/LoginManagerWeb/LoginManagerWeb">
+            <dependent-object>Module_1434206883309</dependent-object>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="LoginDTO.jar" deploy-path="/lib" handle="module:/resource/LoginDTO/LoginDTO">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

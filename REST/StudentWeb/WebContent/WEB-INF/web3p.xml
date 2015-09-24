@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>MyRestRest</display-name>
+	<servlet>
+		<description>
+            JAX-RS Tools Generated - Do not modify</description>
+		<servlet-name>MyRestRest</servlet-name>
+		<servlet-class>com.ibm.websphere.jaxrs.server.IBMRestServlet</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>com.myrest.student.rest.StudentApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MyRestRest</servlet-name>
+		<url-pattern>/MyRest-rest/*</url-pattern>
+	</servlet-mapping>
+	
+	 <security-role>
+		<description>RegisteredUsers</description>
+		<role-name>RegisteredUsers</role-name>
+ 	 </security-role>
+ 	 
+ 	 <security-constraint>
+ 	 	<display-name>Area for authenticated users</display-name>
+		<web-resource-collection>
+			<web-resource-name>Protected Resources</web-resource-name>
+			<url-pattern>/MyRest-rest/services/*</url-pattern>
+				<http-method>GET</http-method>
+		</web-resource-collection>
+ 	 	<auth-constraint>
+ 	 		<role-name>RegisteredUsers</role-name>
+ 	 	</auth-constraint>
+  	 	<user-data-constraint>
+ 	 		<description>Redirects http requests to https</description>
+ 	 		<transport-guarantee>CONFIDENTIAL</transport-guarantee>
+ 	 	</user-data-constraint>
+ 	 </security-constraint>
+
+		<filter>
+		<filter-name>CORS</filter-name>
+		<filter-class>com.thetransactioncompany.cors.CORSFilter</filter-class>
+		<init-param>
+                <param-name>cors.supportedMethods</param-name>
+                <param-value>GET, POST, HEAD, OPTIONS, DELETE, PUT</param-value>
+        </init-param>
+        <init-param>
+                <param-name>cors.exposedHeaders</param-name>
+                <param-value>Location</param-value>
+        </init-param>
+        
+	</filter>
+	<filter-mapping>
+		<filter-name>CORS</filter-name>
+		<url-pattern>/MyRest-rest/*</url-pattern>
+	</filter-mapping>
+	
+</web-app>
